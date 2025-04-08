@@ -27,8 +27,8 @@ public class PropWorthPage {
 		this.wait = new WebDriverWait(driver, Duration.ofSeconds(20));
 	}
 
-	public void clickOnGetEstimation()  {
-		
+	public void clickOnGetEstimation()                                                                                                                                                                              
+	{                                                                                                                                                                                                                                                                                 
 		wait.until(ExpectedConditions.elementToBeClickable(PropWorthPageLocator.clickestimatebtn)).click();
 	}
 
@@ -57,13 +57,13 @@ public class PropWorthPage {
 	}
 
 	public String clickSubLocality(String sublocality) {
-		WebElement dropdownSubLocality = wait
-				.until(ExpectedConditions.presenceOfElementLocated(PropWorthPageLocator.subLocalityDropdowm));
-		dropdownSubLocality.click();
-		Select select = new Select(dropdownSubLocality);
-		wait.until(ExpectedConditions.presenceOfElementLocated(PropWorthPageLocator.subLocalityDropdowm));
+		WebElement dropdownsubLocality = wait
+				.until(ExpectedConditions.presenceOfElementLocated(PropWorthPageLocator.sublocalitydropdowm));
+		dropdownsubLocality.click();
+		Select select = new Select(dropdownsubLocality);
+		wait.until(ExpectedConditions.presenceOfElementLocated(PropWorthPageLocator.sublocalitydropdowm));
 		select.selectByVisibleText(sublocality);
-		dropdownSubLocality.click();
+		dropdownsubLocality.click();
 		return driver.findElement(PropWorthPageLocator.sublocalityoption).getText();
 	}
 
@@ -75,18 +75,18 @@ public class PropWorthPage {
 	}
 
 	public String typeSquareFt(String sqft) {
-		WebElement sqrft = driver.findElement(PropWorthPageLocator.squareFt);
+		WebElement sqrft = driver.findElement(PropWorthPageLocator.squareft);
 		sqrft.sendKeys(sqft);
 		return sqrft.getDomAttribute("value");
 	}
 
 	public String clickFloor(String numFloor) {
-		WebElement dropdownFloor = wait.until(ExpectedConditions.presenceOfElementLocated(PropWorthPageLocator.floors));
-		dropdownFloor.click();
-		Select select = new Select(dropdownFloor);
+		WebElement dropdownfloor = wait.until(ExpectedConditions.presenceOfElementLocated(PropWorthPageLocator.floors));
+		dropdownfloor.click();
+		Select select = new Select(dropdownfloor);
 		wait.until(ExpectedConditions.presenceOfElementLocated(PropWorthPageLocator.floors));
 		select.selectByVisibleText(numFloor);
-		dropdownFloor.click();
+		dropdownfloor.click();
 		return driver.findElement(PropWorthPageLocator.flooroption).getText();
 
 	}
@@ -97,7 +97,7 @@ public class PropWorthPage {
 
 	public void clickInteriors(String interiors) {
 		By interior = By.xpath("//label[text()='" + interiors + "']");
-		WebElement selectname = driver.findElement(PropWorthPageLocator.addDetails);
+		WebElement selectname = driver.findElement(PropWorthPageLocator.adddetails);
 		((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", selectname);
 		wait.until(ExpectedConditions.visibilityOfElementLocated(interior)).click();
 
@@ -109,22 +109,14 @@ public class PropWorthPage {
 	}
 
 	public void clickOnAdditionalDetails() {
-		WebElement addDetail = driver.findElement(PropWorthPageLocator.addDetails);
+		WebElement addDetail = driver.findElement(PropWorthPageLocator.adddetails);
 		((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", addDetail);
 		addDetail.click();
 	}
 
-	public void selectDirection(String direction) {
-		By facing = By.xpath("//label[text()='" + direction + "']");
-		WebElement scroll = wait.until(ExpectedConditions.visibilityOfElementLocated(PropWorthPageLocator.addDetails));
-		((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);",
-				PropWorthPageLocator.scrolladd);
-		wait.until(ExpectedConditions.visibilityOfElementLocated(facing)).click();
-
-	}
 
 	public void clickOnEstimation() {
-		driver.findElement(PropWorthPageLocator.getEstimate).click();
+		driver.findElement(PropWorthPageLocator.getestimate).click();
 	}
 
 	public String getPropworthEstimation() {

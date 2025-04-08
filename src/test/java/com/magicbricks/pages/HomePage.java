@@ -57,17 +57,17 @@ public class HomePage {
 
 	public void clickOnProfile() {
 		try {
-			WebElement popUp = wait.until(ExpectedConditions.presenceOfElementLocated(HomePageLocator.loginPopUp));
+			WebElement popup = wait.until(ExpectedConditions.presenceOfElementLocated(HomePageLocator.loginpopup));
 			Actions action = new Actions(driver);
-			action.moveToElement(popUp).click().perform();
+			action.moveToElement(popup).click().perform();
 		} catch (Exception e) {
 			System.out.println("Not found");
 		}
 	}
 
 	public void clickOnSignOut() {
-		WebElement signOut = wait.until(ExpectedConditions.elementToBeClickable(HomePageLocator.logOut));
-		signOut.click();
+		WebElement signout = wait.until(ExpectedConditions.elementToBeClickable(HomePageLocator.logOut));
+		signout.click();
 	}
 
 	public void clickOnBudget() {
@@ -75,20 +75,20 @@ public class HomePage {
 	}
 
 	public void typeMin(String min_budget) {
-		WebElement minValue = wait.until(ExpectedConditions.elementToBeClickable(HomePageLocator.minVal));
-		minValue.sendKeys(min_budget);
+		WebElement minvalue = wait.until(ExpectedConditions.elementToBeClickable(HomePageLocator.minVal));
+		minvalue.sendKeys(min_budget);
 	}
 
 	public void typeMax(String max_budget) {
-		WebElement maxValue = wait.until(ExpectedConditions.elementToBeClickable(HomePageLocator.maxVal));
-		maxValue.sendKeys(max_budget);
+		WebElement maxvalue = wait.until(ExpectedConditions.elementToBeClickable(HomePageLocator.maxVal));
+		maxvalue.sendKeys(max_budget);
 	}
 
 	public void clickOnBuy() {
-		WebElement buyBtn = wait.until(ExpectedConditions.visibilityOfElementLocated(HomePageLocator.mainBuybutton));
-		if (buyBtn.isDisplayed()) {
+		WebElement buybtn = wait.until(ExpectedConditions.visibilityOfElementLocated(HomePageLocator.mainbuybutton));
+		if (buybtn.isDisplayed()) {
 			Actions action = new Actions(driver);
-			action.moveToElement(buyBtn).perform();
+			action.moveToElement(buybtn).perform();
 		} else {
 			System.out.println("Buy button is not visible.");
 		}

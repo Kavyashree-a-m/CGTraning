@@ -12,8 +12,8 @@ import io.cucumber.testng.CucumberOptions;
 	    features = "src/test/resources/Features",  
 	    glue = "com.magicbricks.stepDefinition",                 
 	    plugin = { "pretty" },  
-	    monochrome = true,
-	    tags = "@test1"
+	    monochrome = true
+	    //tags = "@RegressionTesting and not @SmokeTesting"
 	)
 	public class TestRunner extends AbstractTestNGCucumberTests 
 	{

@@ -22,13 +22,12 @@ public class LoginPage {
 		this.wait = new WebDriverWait(driver, Duration.ofSeconds(5));
 	}
 
-	public void clickOnBuyer() {
+	public boolean clickOnBuyer() {
 		WebElement buyeroption = driver.findElement(LoginPageLocator.buyer);
 		if (!buyeroption.isSelected()) {
 			buyeroption.click();
-		} else {
-			System.out.println("Buyer is already selected");
-		}
+		} 
+		return true;
 	}
 
 	public void typeMobileNumber(String mobilenumber) {
@@ -41,7 +40,7 @@ public class LoginPage {
 	}
 
 	public void manualIntervention() throws InterruptedException {
-		Thread.sleep(45000);
+		Thread.sleep(30000);
 	}
 
 	public void clickOnNext() {

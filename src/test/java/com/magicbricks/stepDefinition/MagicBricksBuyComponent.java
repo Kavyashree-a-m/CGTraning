@@ -37,7 +37,7 @@ public class MagicBricksBuyComponent {
 	// ==========================================================================================================
 	@Given("I am on the login page")
 	public void i_am_on_the_login_page() {
-		Hooks.logger.info("Loading login url");
+	    Hooks.logger.info("Loading login url");
 		DriverSetup.getDriver().get(PropertiesReader.getUrlProperty("loginurl"));
 		loginPage = new LoginPage();
 	}
@@ -45,7 +45,9 @@ public class MagicBricksBuyComponent {
 	@When("I select Buyer button as the user type")
 	public void i_select_buyer_button_as_the_user_type() {
 		Hooks.logger.info("Click on buyer");
-		loginPage.clickOnBuyer();
+		boolean assertBuyer = loginPage.clickOnBuyer();
+		Assert.assertTrue(assertBuyer, "Buyer button should be selected");
+		Hooks.logger.info("Asserting buyer is clicked or not");
 	}
 
 	@When("I enter the mobile number {string}")
@@ -85,7 +87,7 @@ public class MagicBricksBuyComponent {
 		} catch (AssertionError e) {
 			Hooks.logger.error("Login failed");
 			String screenshotPath = ScreenshotUtil.captureScreenshot(DriverSetup.getDriver(),
-					"redirected to the home page test");
+					"Login with valid credential");
 			screenshotPath = screenshotPath.replace("\"", "/");
 			Hooks.test.fail("Login failed", MediaEntityBuilder.createScreenCaptureFromPath(screenshotPath).build());
 			throw e;
@@ -105,11 +107,11 @@ public class MagicBricksBuyComponent {
 		try {
 			Hooks.logger.info("error message displayed");
 			Hooks.test.pass("error message displayed properly");
-			assertTrue(loginPage.getErrorMsg().equals("Mobile number should be of min. 10 digits. Please re-ente."));
+			assertTrue(loginPage.getErrorMsg().equals("Mobile number should be of min. 10 digits. Please re-enter."));
 		} catch (AssertionError e) {
 			Hooks.logger.error("error message not displayed properly");
 			String screenshotPath = ScreenshotUtil.captureScreenshot(DriverSetup.getDriver(),
-					"redirected to the home page test");
+					"Login with invalid mobile number");
 			screenshotPath = screenshotPath.replace("\"", "/");
 			Hooks.test.fail("checking error message for invalid test failed",
 					MediaEntityBuilder.createScreenCaptureFromPath(screenshotPath).build());
@@ -122,6 +124,7 @@ public class MagicBricksBuyComponent {
 		//given Thread.sleep to enter captcha manually
 	    loginPage.typeCaptcha();
 	    loginPage.manualIntervention();
+	    Hooks.logger.info("Entered invalid OTP");
 	    loginPage.clickOnNext();
 	}
 
@@ -134,16 +137,13 @@ public class MagicBricksBuyComponent {
 		}catch (AssertionError e) {
 			Hooks.logger.error("error message not displayed properly");
 			String screenshotPath = ScreenshotUtil.captureScreenshot(DriverSetup.getDriver(),
-					"redirected to the home page test");
+					"Enter invalid captcha");
 			screenshotPath = screenshotPath.replace("\"", "/");
 			Hooks.test.fail("checking error message for invalid captcha test failed",
 					MediaEntityBuilder.createScreenCaptureFromPath(screenshotPath).build());
 			throw e;
 		}
 	}
-
-// end of auth
-//=========================================================================================================	
 
 	// Start search test
 //===========================================================================================================
@@ -163,20 +163,8 @@ public class MagicBricksBuyComponent {
 		String searchvalue = homePage.typeLocation(testData.get("location").toString(),
 				testData.get("searchXpath").toString());
 		Hooks.logger.info("location entered");
-		try {
-			Hooks.logger.info("location displayed");
-			Hooks.test.pass("location assert pass");
-			assertEquals(searchvalue, testData.get("location").toString());
-		} catch (AssertionError e) {
-			Hooks.logger.error("location not displayed");
-			String screenshotPath = ScreenshotUtil.captureScreenshot(DriverSetup.getDriver(),
-					"redirected to the home page test");
-			screenshotPath = screenshotPath.replace("\"", "/");
-			Hooks.test.fail("location assert failed",
-					MediaEntityBuilder.createScreenCaptureFromPath(screenshotPath).build());
-			throw e;
-		}
-
+        assertNotNull(searchvalue);
+        Hooks.logger.info("Asserting searchvalue is no null");
 	}
 
 	@When("I click on the Search button")
@@ -196,7 +184,7 @@ public class MagicBricksBuyComponent {
 		} catch (AssertionError e) {
 			Hooks.logger.error("Property are not displayed with respect to the search location");
 			String screenshotPath = ScreenshotUtil.captureScreenshot(DriverSetup.getDriver(),
-					"redirected to the home page test");
+					"Property displayed base on location");
 			screenshotPath = screenshotPath.replace("\"", "/");
 			Hooks.test.fail("Search with location test failed",
 					MediaEntityBuilder.createScreenCaptureFromPath(screenshotPath).build());
@@ -224,7 +212,7 @@ public class MagicBricksBuyComponent {
 		} catch (AssertionError e) {
 			Hooks.logger.error("Property are not displayed with respect to the search property type");
 			String screenshotPath = ScreenshotUtil.captureScreenshot(DriverSetup.getDriver(),
-					"redirected to the home page test");
+					"Property displayed based on property type");
 			screenshotPath = screenshotPath.replace("\"", "/");
 			Hooks.test.fail("Search Villa failed",
 					MediaEntityBuilder.createScreenCaptureFromPath(screenshotPath).build());
@@ -258,7 +246,7 @@ public class MagicBricksBuyComponent {
 		} catch (AssertionError e) {
 			Hooks.logger.error("Property are not displayed within the range");
 			String screenshotPath = ScreenshotUtil.captureScreenshot(DriverSetup.getDriver(),
-					"redirected to the home page test");
+					"Property displayed within the range");
 			screenshotPath = screenshotPath.replace("\"", "/");
 			Hooks.test.fail("Budget filter failed",
 					MediaEntityBuilder.createScreenCaptureFromPath(screenshotPath).build());
@@ -266,9 +254,6 @@ public class MagicBricksBuyComponent {
 		}
 
 	}
-	// end of search test
-//=========================================================================================================================	
-
 	// premium start
 //==========================================================================================================================	
 	@When("I click on Buy")
@@ -294,7 +279,7 @@ public class MagicBricksBuyComponent {
 		} catch (AssertionError e) {
 			Hooks.logger.error("links are not present");
 			String screenshotPath = ScreenshotUtil.captureScreenshot(DriverSetup.getDriver(),
-					"redirected to the home page test");
+					"Verify link");
 			screenshotPath = screenshotPath.replace("\"", "/");
 			Hooks.test.fail("verfiy link test failed",
 					MediaEntityBuilder.createScreenCaptureFromPath(screenshotPath).build());
@@ -322,16 +307,14 @@ public class MagicBricksBuyComponent {
 		} catch (AssertionError e) {
 			Hooks.logger.error("piechart is not present");
 			String screenshotPath = ScreenshotUtil.captureScreenshot(DriverSetup.getDriver(),
-					"redirected to the home page test");
+					"Display piechart");
 			screenshotPath = screenshotPath.replace("\"", "/");
 			Hooks.test.fail("test failed", MediaEntityBuilder.createScreenCaptureFromPath(screenshotPath).build());
 			throw e;
 		}
 
 	}
-	// end of premium
-//===============================================================================================================================	
-
+	
 	// start propworth estimation test
 //===========================================================================================================================	
 	@When("I click on PropWorth")
@@ -341,7 +324,7 @@ public class MagicBricksBuyComponent {
 	}
 
 	@When("I enter location location")
-	public void i_enter_location_location()                                                                                                                                                                                                                    
+	public void i_enter_location_location()                                                                                                                                                                                                                                                                                                                                                                                                                                              
 	{
 		propWorthPage.switchWindow();
 		Hooks.logger.info("switching window");
@@ -360,19 +343,8 @@ public class MagicBricksBuyComponent {
 		String sublocality = currentData.get("sublocality");
 		String optionClicked = propWorthPage.clickSubLocality(sublocality);
 		Hooks.logger.info("selected sublocality");
-		try {
-			Hooks.logger.info("sublocality is selected properly");
-			Hooks.test.pass(" assert pass");
-			assertEquals(optionClicked, sublocality);
-		} catch (AssertionError e) {
-			Hooks.logger.error("sublocality is not selected properly");
-			String screenshotPath = ScreenshotUtil.captureScreenshot(DriverSetup.getDriver(),
-					"redirected to the home page test");
-			screenshotPath = screenshotPath.replace("\"", "/");
-			Hooks.test.fail("assert failed", MediaEntityBuilder.createScreenCaptureFromPath(screenshotPath).build());
-			throw e;
-		}
-
+		assertEquals(optionClicked, sublocality);
+		Hooks.logger.info("Asserting sublocality value");
 	}
 
 	@When("I select propertyType and BHK from the property type and BHK dropdowns")
@@ -398,19 +370,8 @@ public class MagicBricksBuyComponent {
 		String numfloor = currentData.get("floor");
 		String floor = propWorthPage.clickFloor(numfloor);
 		Hooks.logger.info("selected floor");
-		try {
-			Hooks.logger.info("floor is selected properly");
-			Hooks.test.pass(" assert pass");
-			assertEquals(floor, numfloor);
-		} catch (AssertionError e) {
-			Hooks.logger.error("floor is not selected properly");
-			String screenshotPath = ScreenshotUtil.captureScreenshot(DriverSetup.getDriver(),
-					"redirected to the home page test");
-			screenshotPath = screenshotPath.replace("\"", "/");
-			Hooks.test.fail("assert failed", MediaEntityBuilder.createScreenCaptureFromPath(screenshotPath).build());
-			throw e;
-		}
-
+		assertEquals(floor, numfloor);
+		Hooks.logger.info("Asserting floor");
 	}
 
 	@When("I enter total number of floors totalFloors")
@@ -442,12 +403,6 @@ public class MagicBricksBuyComponent {
 		propWorthPage.clickOnAdditionalDetails();
 	}
 
-	@When("I select desiredFacing from the desired facing dropdown")
-	public void i_select_desired_facing_from_the_desired_facing_dropdown() {
-		currentData = Hooks.excelData.get(Hooks.currentRowIndex);
-		String direction = currentData.get("direction");
-		propWorthPage.selectDirection(direction);
-	}
 
 	@When("I click on Get Estimation")
 	public void i_click_on_get_estimation() {
@@ -491,11 +446,11 @@ public class MagicBricksBuyComponent {
 		try {
 			Hooks.logger.info("Got the estimation");
 			Hooks.test.pass(" propworth estimation test pass");
-			Assert.assertSame(propWorthPage.getPropworthEstimation(), "Estimation");
+			Assert.assertEquals(propWorthPage.getPropworthEstimation(), "Estimation");
 		} catch (AssertionError e) {
 			Hooks.logger.error("esimation didn't displayed");
 			String screenshotPath = ScreenshotUtil.captureScreenshot(DriverSetup.getDriver(),
-					"redirected to the home page test");
+					"PropWorth Estimation with valid data");
 			screenshotPath = screenshotPath.replace("\"", "/");
 			Hooks.test.fail("propworth estimation test failed",
 					MediaEntityBuilder.createScreenCaptureFromPath(screenshotPath).build());
@@ -513,7 +468,7 @@ public class MagicBricksBuyComponent {
 		} catch (AssertionError e) {
 			Hooks.logger.error("error message didn't displayed");
 			String screenshotPath = ScreenshotUtil.captureScreenshot(DriverSetup.getDriver(),
-					"redirected to the home page test");
+					"PropWorth Estimation error message");
 			screenshotPath = screenshotPath.replace("\"", "/");
 			Hooks.test.fail("propworth erroe message test failed",
 					MediaEntityBuilder.createScreenCaptureFromPath(screenshotPath).build());

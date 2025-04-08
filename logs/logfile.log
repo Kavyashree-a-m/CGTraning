@@ -1,0 +1,85 @@
+2025-04-09 00:09:20 [main] INFO  c.magicbricks.stepDefinition.Hooks - clicked on Buy
+2025-04-09 00:09:21 [main] INFO  c.magicbricks.stepDefinition.Hooks - clicked on propworth
+2025-04-09 00:09:21 [main] INFO  c.magicbricks.stepDefinition.Hooks - switching window
+2025-04-09 00:09:24 [main] INFO  c.magicbricks.stepDefinition.Hooks - clicked on get estimation
+2025-04-09 00:09:26 [main] INFO  c.magicbricks.stepDefinition.Hooks - entered location
+2025-04-09 00:09:28 [main] INFO  c.magicbricks.stepDefinition.Hooks - selected sublocality
+2025-04-09 00:09:28 [main] INFO  c.magicbricks.stepDefinition.Hooks - Asserting sublocality value
+2025-04-09 00:09:28 [main] INFO  c.magicbricks.stepDefinition.Hooks - selected property and bhk
+2025-04-09 00:09:28 [main] INFO  c.magicbricks.stepDefinition.Hooks - entered sqft
+2025-04-09 00:09:29 [main] INFO  c.magicbricks.stepDefinition.Hooks - selected floor
+2025-04-09 00:09:29 [main] INFO  c.magicbricks.stepDefinition.Hooks - Asserting floor
+2025-04-09 00:09:29 [main] INFO  c.magicbricks.stepDefinition.Hooks - enterde number of floor
+2025-04-09 00:09:29 [main] INFO  c.magicbricks.stepDefinition.Hooks - select interior
+2025-04-09 00:09:29 [main] INFO  c.magicbricks.stepDefinition.Hooks - entered amount spent
+2025-04-09 00:09:33 [main] INFO  c.magicbricks.stepDefinition.Hooks - click on get estimation
+2025-04-09 00:09:33 [main] INFO  c.magicbricks.stepDefinition.Hooks - enterde name
+2025-04-09 00:09:33 [main] INFO  c.magicbricks.stepDefinition.Hooks - enterd email
+2025-04-09 00:09:33 [main] INFO  c.magicbricks.stepDefinition.Hooks - entered phone number
+2025-04-09 00:10:03 [main] INFO  c.magicbricks.stepDefinition.Hooks - wating to enter captcha
+2025-04-09 00:10:06 [main] INFO  c.magicbricks.stepDefinition.Hooks - click on signup
+2025-04-09 00:10:06 [main] INFO  c.magicbricks.stepDefinition.Hooks - wating to enter otp
+2025-04-09 00:10:41 [main] INFO  c.magicbricks.stepDefinition.Hooks - Clicked on continue
+2025-04-09 00:10:41 [main] INFO  c.magicbricks.stepDefinition.Hooks - Got the estimation
+2025-04-09 00:10:41 [main] ERROR c.magicbricks.stepDefinition.Hooks - esimation didn't displayed
+2025-04-09 00:10:42 [main] INFO  c.magicbricks.utils.ScreenshotUtil - Screenshot captured: screenshots/PropWorth Estimation with valid data_20250409_001041.png
+2025-04-09 00:10:59 [main] INFO  c.magicbricks.stepDefinition.Hooks - clicked on Buy
+2025-04-09 00:11:01 [main] INFO  c.magicbricks.stepDefinition.Hooks - clicked on propworth
+2025-04-09 00:11:01 [main] INFO  c.magicbricks.stepDefinition.Hooks - switching window
+2025-04-09 00:11:04 [main] INFO  c.magicbricks.stepDefinition.Hooks - clicked on get estimation
+2025-04-09 00:11:09 [main] INFO  c.magicbricks.stepDefinition.Hooks - entered location
+2025-04-09 00:11:10 [main] INFO  c.magicbricks.stepDefinition.Hooks - selected sublocality
+2025-04-09 00:11:10 [main] INFO  c.magicbricks.stepDefinition.Hooks - Asserting sublocality value
+2025-04-09 00:11:11 [main] INFO  c.magicbricks.stepDefinition.Hooks - selected property and bhk
+2025-04-09 00:11:11 [main] INFO  c.magicbricks.stepDefinition.Hooks - entered sqft
+2025-04-09 00:11:11 [main] INFO  c.magicbricks.stepDefinition.Hooks - selected floor
+2025-04-09 00:11:11 [main] INFO  c.magicbricks.stepDefinition.Hooks - Asserting floor
+2025-04-09 00:11:12 [main] INFO  c.magicbricks.stepDefinition.Hooks - select interior
+2025-04-09 00:11:12 [main] INFO  c.magicbricks.stepDefinition.Hooks - entered amount spent
+2025-04-09 00:11:12 [main] INFO  c.magicbricks.stepDefinition.Hooks - click on get estimation
+2025-04-09 00:11:12 [main] INFO  c.magicbricks.stepDefinition.Hooks - error message displayed
+2025-04-09 00:11:16 [main] INFO  c.magicbricks.stepDefinition.Hooks - Loading login url
+2025-04-09 00:11:17 [main] INFO  c.magicbricks.stepDefinition.Hooks - Click on buyer
+2025-04-09 00:11:19 [main] INFO  c.magicbricks.stepDefinition.Hooks - Asserting buyer is clicked or not
+2025-04-09 00:11:19 [main] INFO  c.magicbricks.stepDefinition.Hooks - Enter Mobile Number
+2025-04-09 00:11:49 [main] INFO  c.magicbricks.stepDefinition.Hooks - Enter Captcha
+2025-04-09 00:11:51 [main] INFO  c.magicbricks.stepDefinition.Hooks - Click on next
+2025-04-09 00:12:22 [main] INFO  c.magicbricks.stepDefinition.Hooks - Entered otp
+2025-04-09 00:12:22 [main] INFO  c.magicbricks.stepDefinition.Hooks - Login successfully
+2025-04-09 00:12:26 [main] INFO  c.magicbricks.stepDefinition.Hooks - Loading login url
+2025-04-09 00:12:30 [main] INFO  c.magicbricks.stepDefinition.Hooks - Click on buyer
+2025-04-09 00:12:30 [main] INFO  c.magicbricks.stepDefinition.Hooks - Asserting buyer is clicked or not
+2025-04-09 00:12:31 [main] INFO  c.magicbricks.stepDefinition.Hooks - Entered wrong mobile number
+2025-04-09 00:12:31 [main] INFO  c.magicbricks.stepDefinition.Hooks - error message displayed
+2025-04-09 00:12:35 [main] INFO  c.magicbricks.stepDefinition.Hooks - Loading login url
+2025-04-09 00:12:40 [main] INFO  c.magicbricks.stepDefinition.Hooks - Click on buyer
+2025-04-09 00:12:40 [main] INFO  c.magicbricks.stepDefinition.Hooks - Asserting buyer is clicked or not
+2025-04-09 00:12:40 [main] INFO  c.magicbricks.stepDefinition.Hooks - Enter Mobile Number
+2025-04-09 00:13:10 [main] INFO  c.magicbricks.stepDefinition.Hooks - Entered invalid OTP
+2025-04-09 00:13:11 [main] INFO  c.magicbricks.stepDefinition.Hooks - captcha error message displayed
+2025-04-09 00:13:21 [main] INFO  c.magicbricks.stepDefinition.Hooks - location entered
+2025-04-09 00:13:21 [main] INFO  c.magicbricks.stepDefinition.Hooks - Asserting searchvalue is no null
+2025-04-09 00:13:22 [main] INFO  c.magicbricks.stepDefinition.Hooks - clicked on search
+2025-04-09 00:13:22 [main] INFO  c.magicbricks.stepDefinition.Hooks - Feteching the address text and asserting
+2025-04-09 00:13:22 [main] INFO  c.magicbricks.stepDefinition.Hooks - Property are displayed with respect to the search location
+2025-04-09 00:13:35 [main] INFO  c.magicbricks.stepDefinition.Hooks - location entered
+2025-04-09 00:13:35 [main] INFO  c.magicbricks.stepDefinition.Hooks - Asserting searchvalue is no null
+2025-04-09 00:13:36 [main] INFO  c.magicbricks.stepDefinition.Hooks - Selected villa
+2025-04-09 00:13:37 [main] INFO  c.magicbricks.stepDefinition.Hooks - clicked on search
+2025-04-09 00:13:37 [main] INFO  c.magicbricks.stepDefinition.Hooks - Feteching the property type and asserting
+2025-04-09 00:13:37 [main] INFO  c.magicbricks.stepDefinition.Hooks - Property are displayed with respect to the property type
+2025-04-09 00:13:47 [main] INFO  c.magicbricks.stepDefinition.Hooks - location entered
+2025-04-09 00:13:47 [main] INFO  c.magicbricks.stepDefinition.Hooks - Asserting searchvalue is no null
+2025-04-09 00:13:48 [main] INFO  c.magicbricks.stepDefinition.Hooks - clicked on budget
+2025-04-09 00:13:48 [main] INFO  c.magicbricks.stepDefinition.Hooks - entered minimum value
+2025-04-09 00:13:48 [main] INFO  c.magicbricks.stepDefinition.Hooks - Entered maximum value
+2025-04-09 00:13:49 [main] INFO  c.magicbricks.stepDefinition.Hooks - clicked on search
+2025-04-09 00:13:57 [main] INFO  c.magicbricks.stepDefinition.Hooks - clicked on Buy
+2025-04-09 00:13:59 [main] INFO  c.magicbricks.stepDefinition.Hooks - Clicked on premium house
+2025-04-09 00:14:02 [main] INFO  c.magicbricks.stepDefinition.Hooks - all the links are present
+2025-04-09 00:14:08 [main] INFO  c.magicbricks.stepDefinition.Hooks - clicked on Buy
+2025-04-09 00:14:10 [main] INFO  c.magicbricks.stepDefinition.Hooks - Clicked on premium house
+2025-04-09 00:14:10 [main] INFO  c.magicbricks.stepDefinition.Hooks - Switching window
+2025-04-09 00:14:12 [main] INFO  c.magicbricks.stepDefinition.Hooks - clicked on emi
+2025-04-09 00:14:12 [main] INFO  c.magicbricks.stepDefinition.Hooks - switching window
+2025-04-09 00:14:12 [main] INFO  c.magicbricks.stepDefinition.Hooks - piechart is present

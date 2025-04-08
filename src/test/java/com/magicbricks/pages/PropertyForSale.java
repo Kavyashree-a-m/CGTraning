@@ -20,7 +20,6 @@ public class PropertyForSale {
 
 	public PropertyForSale() {
 		this.driver = DriverSetup.getDriver();
-		// String secs = PropertiesReader.getConfigProperty("waittimeout");
 		this.wait = new WebDriverWait(driver, Duration.ofSeconds(5));
 	}
 
@@ -60,8 +59,8 @@ public class PropertyForSale {
 		List<WebElement> price = getPrice();
 
 		// Convert min_value and max_value to numerical values
-		double minValue = Double.parseDouble(min_value);
-		double maxValue = Double.parseDouble(max_value);
+		double minvalue = Double.parseDouble(min_value);
+		double maxvalue = Double.parseDouble(max_value);
 
 		for (WebElement item : price) {
 			String cost = item.getText();
@@ -90,7 +89,7 @@ public class PropertyForSale {
 			double costValue = Double.parseDouble(cost);
 
 			// Check if cost is within the range
-			if (costValue < minValue || costValue > maxValue) {
+			if (costValue < minvalue || costValue > maxvalue) {
 				return false;
 			}
 		}

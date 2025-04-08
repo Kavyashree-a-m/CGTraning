@@ -20,18 +20,16 @@ import com.magicbricks.locatorstore.PremiumPageLocator;
 public class PremiumPage {
 	private WebDriver driver;
 	WebDriverWait wait;
-	// String parentWString = HomePage.parentWindow;
 
 	// Constructor initializes WebDriver
 	public PremiumPage() {
 		this.driver = DriverSetup.getDriver();
-		// String secs = PropertiesReader.getConfigProperty("waittimeout");
 		this.wait = new WebDriverWait(driver, Duration.ofSeconds(20));
 	}
 
 	public void windoHandel(String parentWindow) {
 		wait.until(ExpectedConditions.numberOfWindowsToBe(2));
-//			  
+			  
 		Set<String> allWindows = driver.getWindowHandles();
 		for (String window : allWindows) {
 			if (!window.equals(parentWindow)) {
@@ -44,13 +42,13 @@ public class PremiumPage {
 	}
 
 	public boolean checkText() {
-		WebElement waitJs = wait.until(ExpectedConditions.visibilityOfElementLocated(PremiumPageLocator.jsWait));
-		((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", waitJs);
+		WebElement waitjs = wait.until(ExpectedConditions.visibilityOfElementLocated(PremiumPageLocator.jswait));
+		((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", waitjs);
 
 		List<String> list1 = Arrays.asList("Rates & Trends", "EMI Calculator", "Investment Hotspot",
 				"Research Insights");
 		List<String> list2 = new ArrayList<String>();
-		List<WebElement> elements = driver.findElements(PremiumPageLocator.testAd);
+		List<WebElement> elements = driver.findElements(PremiumPageLocator.testad);
 		for (WebElement element : elements) {
 			String txt = element.getText();
 			list2.add(txt);
@@ -62,7 +60,7 @@ public class PremiumPage {
 	}
 
 	public void clickOnEMI() {
-		WebElement waitJs = wait.until(ExpectedConditions.visibilityOfElementLocated(PremiumPageLocator.jsWait));
+		WebElement waitJs = wait.until(ExpectedConditions.visibilityOfElementLocated(PremiumPageLocator.jswait));
 		((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", waitJs);
 
 		wait.until(ExpectedConditions.elementToBeClickable(PremiumPageLocator.emi)).click();

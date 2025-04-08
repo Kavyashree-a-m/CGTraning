@@ -11,7 +11,7 @@ import io.cucumber.testng.CucumberOptions;
     glue = "com.magicbricks.stepDefinition",                 
     plugin = { "pretty", "html:target/cucumber-reports.html" },  
     monochrome = true,                          
-    tags = "@test1"                       
+    tags = "@RegressionTesting"                       
 )
 public class TestNGRunnerParallel extends AbstractTestNGCucumberTests 
 {

@@ -20,7 +20,7 @@
 Feature: Verify proper estimation of price
   As a buyer, I want to get a proper estimation of price based on entered details
 
-@RegressionTesting
+@Smoketesting
   Scenario Outline: User gets proper estimation of price based on entered details
     Given I am on the buy search page
     When I click on Buy

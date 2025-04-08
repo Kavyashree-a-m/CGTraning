@@ -56,14 +56,7 @@ public class Hooks {
 
 	@After
 	public void teardown(Scenario scenario) {
-		if (scenario.isFailed()) {
-			test.fail("Scenario failed: " + scenario.getName());
-			// Optionally, you can add a screenshot to the report
-			String screenshotPath = ScreenshotUtil.captureScreenshot(DriverSetup.getDriver(), scenario.getName());
-			test.addScreenCaptureFromPath(screenshotPath);
-		} else {
-			test.pass("Scenario passed: " + scenario.getName());
-		}
+		
 		currentRowIndex++;
 		DriverSetup.quitDriver(); // Quit driver after scenario
 	}

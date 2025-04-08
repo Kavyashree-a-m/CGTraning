@@ -31,7 +31,7 @@ As a user I must login so that I can buy a property
     Then I should be logged in successfully
     Examples:
       | mobile number |
-      | 6361518492    |
+      | 9740467112    |
       
 @RegressionTesting
   Scenario Outline: I log in with invalid credentials
