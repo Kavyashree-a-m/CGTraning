@@ -1,0 +1,26 @@
+Feature
+      login
+      Search and Filter
+      review
+      prop worthy estimation
+      calculate estimation
+     
+  Login
+      To verify user able to login with valid credential
+      To verify user should get error message with invalid credential
+      
+ Search and apply filter
+     To verify user should able to search Property with location 
+     To verify user should able to search only Villas
+     To verify user should able to apply  filter min and mix and all the property which are displayed within that budget
+     
+ Review
+     To verify user should able to see review of the property they have selected
+     To verify that user should able to give review
+     
+ Prop worthy 
+     To verify user should get proper estimation of price respect to the entered details
+     
+ calculate estimation
+     To verify user should get estimate if details are  entered properly 
+     To verify user should get error message if details are not entered properly 
